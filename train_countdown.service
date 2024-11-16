@@ -1,0 +1,15 @@
+[Unit]
+Description=Train Countdown Script
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/jacob/train_project/train_countdown.py
+WorkingDirectory=/home/jacob/train_project
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=jacob
+
+[Install]
+WantedBy=multi-user.target
