@@ -1,6 +1,6 @@
 # Train Countdown Timer
 
-This project is a Python-based countdown timer for train departures in Melbourne Australia, designed to run on a Raspberry Pi with an e-ink display. The timer fetches live train schedule data from the PTV (Public Transport Victoria) API and displays the time remaining until the next train departs.
+This project is a Python-based countdown timer for train departures in Melbourne Australia, designed to run on a Raspberry Pi with an e-ink display. The timer fetches live train schedule data from the PTV (Public Transport Victoria) API and displays the time remaining until the next train departs from any station (configured by you) towards Flinders Street.
 
 <img src="Timer.gif" alt="Running Timer" width="400" height="300">
 
@@ -26,6 +26,11 @@ This project is a Python-based countdown timer for train departures in Melbourne
  - Assemble the Raspberry Pi Zero, case and screen as per the waveshare instructions.
  - Create an SD card image for your Pi and boot it up connected to a mouse, keyboard and screen.
 
+## Get an API Key
+Send an email to [APIKeyRequest@ptv.vic.gov.au](APIKeyRequest@ptv.vic.gov.au) with the following information in the subject line of the email:
+“PTV Timetable API – request for key”
+This takes some time but they will eventually respond with your dev_id and API key
+
 ## Installation
 
 1. **Clone the Repository**:
@@ -39,9 +44,10 @@ This project is a Python-based countdown timer for train departures in Melbourne
     pip install -r requirements.txt
     ```
 
-3. **Configure the PTV API**:
-   - Set up a PTV developer account and obtain your `devid` and `signature`.
-   - Update these credentials in `train_countdown.py`.
+3. **Configure the config.py**:
+   - Create a file config.py using the sample file config.sample.py
+   - fill in the fields DEV_ID, API_KEY with your info from PTV.
+   - See train_stop_ids.txt for a list of stop ids - the count down will be for the next train departing towards Flinders Street.
 
 4. **Configure System Service**:
    - To run the script as a background service, copy the provided `train_countdown.service` to `/etc/systemd/system/`.
