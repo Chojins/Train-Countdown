@@ -1,6 +1,7 @@
 # Train Countdown Timer
 
 This project is a Python-based countdown timer for train departures in Melbourne Australia, designed to run on a Raspberry Pi with an e-ink display. The timer fetches live train schedule data from the PTV (Public Transport Victoria) API and displays the time remaining until the next train departs.
+
 <img src="Timer.gif" alt="Running Timer" width="400" height="300">
 
 ## Features
