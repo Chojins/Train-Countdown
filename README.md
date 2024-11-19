@@ -14,13 +14,17 @@ This project is a Python-based countdown timer for train departures in Melbourne
 ## Requirements
 
 - **Hardware**:
-  - Raspberry Pi (tested on Pi Zero WH)
-  - Waveshare 2.13-inch Touch E-Paper Display
+  - Raspberry Pi Zero with header (tested on Pi Zero WH)
+  - 2.13-inch Touch E-Paper Display and case [from Waveshare](https://www.waveshare.com/product/2.13inch-touch-e-paper-hat-with-case.htm)
 
 - **Software**:
   - Python 3
   - [Requests](https://docs.python-requests.org/en/master/)
   - [Pillow](https://pillow.readthedocs.io/)
+
+## Build
+ - Assemble the Raspberry Pi Zero, case and screen as per the waveshare instructions.
+ - Create an SD card image for your Pi and boot it up connected to a mouse, keyboard and screen.
 
 ## Installation
 
@@ -39,7 +43,7 @@ This project is a Python-based countdown timer for train departures in Melbourne
    - Set up a PTV developer account and obtain your `devid` and `signature`.
    - Update these credentials in `train_countdown.py`.
 
-4. **Configure System Service (Optional)**:
+4. **Configure System Service**:
    - To run the script as a background service, copy the provided `train_countdown.service` to `/etc/systemd/system/`.
    - Enable and start the service:
      ```bash
@@ -48,7 +52,7 @@ This project is a Python-based countdown timer for train departures in Melbourne
      ```
 
 ## Usage
-Start the service manuallY
+Start the service manually
 ```bash
 sudo systemctl start train_countdown.service
 ```
